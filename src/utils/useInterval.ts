@@ -6,7 +6,7 @@ export function useInterval(callback: () => void, delay: number) {
   const addInterval = () => {
     if (!click.current) {
       callback()
-      const id = setInterval(() => callback(), delay || 0);
+      const id = setInterval(callback, delay);
       intervalRef.current = id;
       click.current = true
     } else {
