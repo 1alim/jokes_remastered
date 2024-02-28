@@ -33,12 +33,13 @@ export const Main = () => {
   const timer = useInterval(() => dispatch(addJoke()), 1000)
 
   return (
-    <DivWrap>
+    <DivWrap> 
       <Div>
         <Button onClick={() => dispatch(addJoke())}>get joke</Button>
         <Button onClick={() => timer?.addInterval()}>interval joke</Button>
         <Button onClick={() => { joke && dispatch(favoriteJoke(joke)) }}>To Favorite</Button>
       </Div>
+      {console.log(joke)}
       <div>
         {joke && (
           <JokeItem width={'80vw'} item={joke} />
